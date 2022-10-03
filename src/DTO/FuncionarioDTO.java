@@ -2,7 +2,26 @@ package DTO;
 
 public class FuncionarioDTO {
 
-    private String nome_funcionario, data_servico, nome_cliente, valor_servico, servicoDescricao;
+    private String nome_funcionario, nome_cliente, servicoDescricao;
+    private double data_servico;
+    private float valor_servico;
+    private int id_servico;
+
+    public int getId_servico() {
+        return id_servico;
+    }
+
+    public void setId_servico(int id_servico) {
+        this.id_servico = id_servico;
+    }
+
+    public double getData_servico() {
+        return data_servico;
+    }
+
+    public void setData_servico(double data_servico) {
+        this.data_servico = data_servico;
+    }
 
     /**
      * @return the nome_funcionario
@@ -27,20 +46,6 @@ public class FuncionarioDTO {
     }
 
     /**
-     * @return the data_servico
-     */
-    public String getData_servico() {
-        return data_servico;
-    }
-
-    /**
-     * @param data_servico the data_servico to set
-     */
-    public void setData_servico(String data_servico) {
-        this.data_servico = data_servico;
-    }
-
-    /**
      * @return the nome_cliente
      */
     public String getNome_cliente() {
@@ -54,17 +59,11 @@ public class FuncionarioDTO {
         this.nome_cliente = nome_cliente;
     }
 
-    /**
-     * @return the valor_servico
-     */
-    public String getValor_servico() {
+    public float getValor_servico() {
         return valor_servico;
     }
 
-    /**
-     * @param valor_servico the valor_servico to set
-     */
-    public void setValor_servico(String valor_servico) {
+    public void setValor_servico(float valor_servico) {
         this.valor_servico = valor_servico;
     }
 
