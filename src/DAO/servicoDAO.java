@@ -8,24 +8,24 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import DTO.FuncionarioDTO;
+import DTO.servicoDTO;
 
-public class FuncionarioDAO {
+public class servicoDAO {
     Connection conn;
     PreparedStatement pstm;
     ResultSet rs;
-    ArrayList<FuncionarioDTO> lista = new ArrayList<>();
+    ArrayList<servicoDTO> lista = new ArrayList<>();
 
-    public void cadastrarServico(FuncionarioDTO objfuncionariodto) {
+    public void cadastrarServico(servicoDTO objfuncionariodto) {
         conn = new ConexaoDAO().conectaBD();
 
         try {
-            pstm = conn.prepareStatement("insert into servicos (nome_funcionario, nome_cliente, valor_servico, servico_descricao) values (?,?,?,?)");
+            pstm = conn.prepareStatement("insert into servicos (nome_funcionario, nome_cliente, valor_servico, servico_descricao, data_servico) values (?,?,?,?,?)");
             pstm.setString(1, objfuncionariodto.getNome_funcionario());
             pstm.setString(2, objfuncionariodto.getNome_cliente());
             pstm.setFloat(3, objfuncionariodto.getValor_servico());
-          //  pstm.setDouble(4, objfuncionariodto.getData_servico());
             pstm.setString(4, objfuncionariodto.getServicoDescricao());
+            pstm.setString(5, objfuncionariodto.getData_servico());
 
             pstm.execute();
             pstm.close();
@@ -34,16 +34,16 @@ public class FuncionarioDAO {
         }
     }
 
-    public  ArrayList<FuncionarioDTO>  consultarHistoricoServicos() {
+    public  ArrayList<servicoDTO>  consultarHistoricoServicos() {
         conn = new ConexaoDAO().conectaBD();
         try {
             pstm = conn.prepareStatement("select * from servicos");
             rs = pstm.executeQuery();
 
             while(rs.next()){
-                FuncionarioDTO objFuncionarioDTO = new FuncionarioDTO();
+                servicoDTO objFuncionarioDTO = new servicoDTO();
                 objFuncionarioDTO.setId_servico(rs.getInt("id_servico"));
-                objFuncionarioDTO.setData_servico(rs.getDouble("data_servico"));
+                objFuncionarioDTO.setData_servico(rs.getString("data_servico"));
                 objFuncionarioDTO.setNome_cliente(rs.getString("nome_cliente"));
                 objFuncionarioDTO.setServicoDescricao(rs.getString("servico_descricao"));
                 objFuncionarioDTO.setValor_servico(rs.getFloat("valor_servico"));

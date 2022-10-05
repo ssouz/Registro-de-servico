@@ -1,9 +1,8 @@
 package DTO;
 
-public class FuncionarioDTO {
+public class servicoDTO {
 
-    private String nome_funcionario, nome_cliente, servicoDescricao;
-    private double data_servico;
+    private String nome_funcionario, nome_cliente, servicoDescricao, data_servico;
     private float valor_servico;
     private int id_servico;
 
@@ -15,11 +14,12 @@ public class FuncionarioDTO {
         this.id_servico = id_servico;
     }
 
-    public double getData_servico() {
+   
+    public String getData_servico() {
         return data_servico;
     }
 
-    public void setData_servico(double data_servico) {
+    public void setData_servico(String data_servico) {
         this.data_servico = data_servico;
     }
 
