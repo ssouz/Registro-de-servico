@@ -261,15 +261,15 @@ public class frmCadastro extends javax.swing.JFrame {
                 
                 
             
-                servicoDTO objfFuncionarioDTO = new servicoDTO();
-                objfFuncionarioDTO.setNome_funcionario(txtNomeFuncionario.getText());
-                objfFuncionarioDTO.setNome_cliente(txtNomeCliente.getText());
-                objfFuncionarioDTO.setValor_servico(Float.parseFloat(txtValor.getText()));
-                objfFuncionarioDTO.setServicoDescricao(txtDescricao.getText());
-                objfFuncionarioDTO.setData_servico(cbDAY.getSelectedItem() + "/" + cbMONTH.getSelectedItem() + "/" + cbYEAR.getSelectedItem());
+                servicoDTO objServicoDTO = new servicoDTO();
+                objServicoDTO.setNome_funcionario(txtNomeFuncionario.getText());
+                objServicoDTO.setNome_cliente(txtNomeCliente.getText());
+                objServicoDTO.setValor_servico(Float.parseFloat(txtValor.getText()));
+                objServicoDTO.setServicoDescricao(txtDescricao.getText());
+                objServicoDTO.setData_servico(cbDAY.getSelectedItem() + "/" + cbMONTH.getSelectedItem() + "/" + cbYEAR.getSelectedItem());
                 
-                servicoDAO objFuncionariodao = new servicoDAO();
-                objFuncionariodao.cadastrarServico(objfFuncionarioDTO);
+                servicoDAO objServicoDAO = new servicoDAO();
+                objServicoDAO.cadastrarServico(objServicoDTO);
         }
         
        

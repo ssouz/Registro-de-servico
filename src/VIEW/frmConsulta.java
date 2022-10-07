@@ -7,7 +7,7 @@ package VIEW;
 import DAO.servicoDAO;
 import DTO.servicoDTO;
 
-import java.sql.SQLException;
+
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -180,11 +180,11 @@ public class frmConsulta extends javax.swing.JFrame {
 
     private void listarValoresServicos() {
         try {
-            servicoDAO objFuncionarioDAO = new servicoDAO();
+            servicoDAO objServicoDAO = new servicoDAO();
             DefaultTableModel model = (DefaultTableModel) tabelaServicos.getModel();
             model.setNumRows(0);
 
-            ArrayList<servicoDTO> lista = objFuncionarioDAO.consultarHistoricoServicos();
+            ArrayList<servicoDTO> lista = objServicoDAO.consultarHistoricoServicos();
 
             for (int i = 0; i < lista.size(); i++) {
                 model.addRow(new Object[] {
