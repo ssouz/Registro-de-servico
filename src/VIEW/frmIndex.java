@@ -4,6 +4,8 @@
  */
 package VIEW;
 
+
+
 /**
  *
  * @author souzr
@@ -35,9 +37,10 @@ public class frmIndex extends javax.swing.JFrame {
 
         jButton2.setText("jButton2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 
         btnHistorico.setText("Historico de serviços");
+        
         btnHistorico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistoricoActionPerformed(evt);
@@ -78,6 +81,7 @@ public class frmIndex extends javax.swing.JFrame {
     private void btnHistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoricoActionPerformed
         frmConsulta historico = new frmConsulta();
         historico.setVisible(true);
+        
     }//GEN-LAST:event_btnHistoricoActionPerformed
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed

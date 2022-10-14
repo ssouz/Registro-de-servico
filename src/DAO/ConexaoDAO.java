@@ -7,13 +7,14 @@ import javax.swing.JOptionPane;
 
 public class ConexaoDAO {
     public Connection conectaBD() {
-        Connection conn = null;
-
+         
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoteste?user=root&password=");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoteste?user=root&password=");
+            return conn;
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "conexaoDAO " + erro.getMessage());
         }
-        return conn;
+        return null;
+        
     }
 }

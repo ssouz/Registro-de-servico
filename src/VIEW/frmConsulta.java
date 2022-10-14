@@ -7,7 +7,6 @@ package VIEW;
 import DAO.servicoDAO;
 import DTO.servicoDTO;
 
-
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -25,6 +24,7 @@ public class frmConsulta extends javax.swing.JFrame {
     public frmConsulta() {
         initComponents();
         listarValoresServicos();
+        
     }
 
     /**
@@ -34,16 +34,18 @@ public class frmConsulta extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0),
+                new java.awt.Dimension(0, 0));
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaServicos = new javax.swing.JTable();
         btnAtualizar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
@@ -51,22 +53,21 @@ public class frmConsulta extends javax.swing.JFrame {
         jLabel3.setText("historico de serviços");
 
         tabelaServicos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "identificação", "Data do serviço", "Nome do cliente", "Descriçao", "valor total", "Funcionario"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, false, false, false
+                new Object[][] {
+                        { null, null, null, null, null, null },
+                        { null, null, null, null, null, null },
+                        { null, null, null, null, null, null },
+                        { null, null, null, null, null, null }
+                },
+                new String[] {
+                        "identificação", "Data do serviço", "Nome do cliente", "Descriçao", "valor total", "Funcionario"
+                }) {
+            boolean[] canEdit = new boolean[] {
+                    false, true, true, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         jScrollPane1.setViewportView(tabelaServicos);
@@ -89,38 +90,39 @@ public class frmConsulta extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnAtualizar)
-                .addGap(436, 436, 436))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(386, 386, 386)
-                .addComponent(jLabel3)
-                .addContainerGap(430, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnAtualizar)
+                                .addGap(436, 436, 436))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(386, 386, 386)
+                                .addComponent(jLabel3)
+                                .addContainerGap(430, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1)
+                                .addContainerGap()));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAtualizar)
-                .addGap(24, 24, 24))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65,
+                                        Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAtualizar)
+                                .addGap(24, 24, 24)));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnAtualizarActionPerformed
         listarValoresServicos();
-    }//GEN-LAST:event_btnAtualizarActionPerformed
+    }// GEN-LAST:event_btnAtualizarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
 
@@ -184,18 +186,18 @@ public class frmConsulta extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) tabelaServicos.getModel();
             model.setNumRows(0);
 
-            ArrayList<servicoDTO> lista = objServicoDAO.consultarHistoricoServicos();
 
-            for (int i = 0; i < lista.size(); i++) {
+            for (servicoDTO servicoDTO : objServicoDAO.consultarHistoricoServicos()) {
                 model.addRow(new Object[] {
-                        lista.get(i).getId_servico(),
-                        lista.get(i).getData_servico(),
-                        lista.get(i).getNome_cliente(),
-                        lista.get(i).getServicoDescricao(),
-                        lista.get(i).getValor_servico(),
-                        lista.get(i).getNome_funcionario()
+                    servicoDTO.getId_servico(),
+                    servicoDTO.getData_servico(),
+                    servicoDTO.getNome_cliente(),
+                    servicoDTO.getServicoDescricao(),
+                    servicoDTO.getValor_servico(),
+                    servicoDTO.getNome_funcionario()   
                 });
             }
+
 
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(null, "listarvalores" + erro);
